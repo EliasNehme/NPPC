@@ -1,0 +1,225 @@
+<!-- <script type="text/javascript">google.load("jquery", "1.3.2");</script> -->
+
+<!doctype html>
+<html>
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+
+	<title>Uncertainty Quantification via Neural Posterior Principal Components</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  	<link href="style.css" rel="stylesheet" type="text/css">
+	<meta property="og:image" content="resources/teaser.png"/> 
+	<meta property="og:title" content="Uncertainty Quantification via Neural Posterior Principal Components" />
+	<meta property="og:description" content="" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/ad96f96272.js" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	
+	<!-- navigation bar on the top, nav bar stick to the top -->
+	<nav id="navbar_top" class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary" style="margin-bottom: 15px;">
+		<div class="container-xl">
+				<a class="navbar-brand" href="https://github.com/EliasNehme/NPPC">Neural Posterior Principal Components</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="main_nav">
+			<ul class="navbar-nav ms-auto">
+				<li class="nav-item"><a class="nav-link" href="#coming-soon">Coming Soon...</a></li>
+				<li class="nav-item"><a class="nav-link" href="#paper">Paper</a></li>
+			</ul>
+			</div> 
+		</div> 
+		</nav>
+	<!-- end nav bar -->
+
+	<div class="container-xl"> 
+		<!-- top button -->
+		<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+		<!-- end top button -->
+
+		<!-- top - author names, affiliation and links -->
+		<center>
+			<h1>Uncertainty Quantification via Neural Posterior Principal Components</h1>
+			<h4>NeurIPS 2023</h4>
+			<div class="container-xl">
+				<div class="row justify-content-center">
+					<div class="col-md-auto">
+						<span style="font-size:24px"><a href="https://eliasnehme.github.io/" target="_blank" rel="noopener noreferrer">Elias Nehme</a></span>
+					</div>
+                    <div class="col-md-auto">
+						<span style="font-size:24px"><a href="https://www.linkedin.com/in/yairomer/" target="_blank" rel="noopener noreferrer">Omer Yair</a></span>
+					</div>
+					<div class="col-md-auto">
+						<span style="font-size:24px"><a href="https://tomer.net.technion.ac.il/" target="_blank" rel="noopener noreferrer">Tomer Michaeli</a></span>
+					</div>
+				</div>
+			</div>
+
+			<p class="text-center affilation" style="font-size: 20pt;">Technion - Israel Institute of Technology<p>
+
+			<div class="container-xl">
+				<div class="row justify-content-center">
+					<div class="col-md-auto">
+						<span style="font-size:24px"><a href='resources/paper.pdf' target="_blank" rel="noopener noreferrer">[<i class="fas fa-file-pdf"></i> Paper]</a></span>
+					</div>
+					<div class="col-md-auto">
+						<span style="font-size:24px"><a href='resources/supp.pdf' target="_blank" rel="noopener noreferrer">[<i class="fas fa-file-pdf"></i> Supplementary]</a></span>
+					</div>
+					<div class="col-md-auto">
+						<span style="font-size:24px"><a href="https://github.com/EliasNehme/NPPC" target="_blank" rel="noopener noreferrer">[<i class="fab fa-github"></i> Code - Coming Soon...]</a></span>
+					</div>
+				</div>
+			</div>
+		</center>
+		<!-- end top -->
+
+		<!-- abstract and teaser image-->
+		<center>
+			<div class="container-xl" style="margin-top: 20px; max-width: 800px">
+                <video autoplay loop muted playsinline controls width="100%">
+                    <source src="./resources/intro_video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>                  
+			</div>
+		<h1 style="margin-top: 10px;">Abstract</h1>
+		</center>
+		<p>
+            Uncertainty quantification is crucial for the deployment of image restoration models in safety-critical domains,
+            like autonomous driving and biological imaging. To date,
+            methods for uncertainty visualization have mainly focused on per-pixel estimates.
+            However, a heatmap of per-pixel variances is typically of little practical use, as it
+            does not capture the strong correlations between pixels. A more natural measure of
+            uncertainty corresponds to the variances along the principal components (PCs) of
+            the posterior distribution. Theoretically, the PCs can be computed by applying PCA
+            on samples generated from a conditional generative model for the input image.
+            However, this requires generating a very large number of samples at test time,
+            which is painfully slow with the current state-of-the-art (diffusion) models. In this
+            work, we present a method for predicting the PCs of the posterior distribution for
+            any input image, in a single forward pass of a neural network. Our method can
+            either wrap around a pre-trained model that was trained to minimize the mean
+            square error (MSE), or can be trained from scratch to output both a predicted image
+            and the posterior PCs. We showcase our method on multiple inverse problems in
+            imaging, including denoising, inpainting, super-resolution, and biological image-to-image translation.
+            Our method reliably conveys instance-adaptive uncertainty 
+            directions, achieving uncertainty quantification comparable with posterior samplers 
+            while being orders of magnitude faster.
+        </p>
+	
+		<hr id="coming-soon">
+		<center><h1 style="margin-top: 65px;">Coming Soon...</h1></center>
+		
+
+		<!-- Paper -->
+		<hr id="paper">
+		<div class="container-xl">
+			<center><h1 style="margin-top: 65px;">Paper</h1></center>
+			<div class="row justify-content-center">
+				<div class="col-md-auto" style="padding: 1px;">
+					<a href='resources/paper.pdf' target="_blank" rel="noopener noreferrer">
+						<img alt="" class="layered-paper-big" style="height:100%; max-height: 175px;" src="./resources/paper.jpg"/>
+					</a>
+				</div>
+				<div class="col-md-auto" style="padding: 1px;">
+					<p style="font-size:14pt; margin-top: 5px;"><strong>Uncertainty Quantification via Neural Posterior Principal Components</strong><br>
+						Elias Nehme, Omer Yair, Tomer Michaeli.<br>
+						<a href='https://arxiv.org' target="_blank" rel="noopener noreferrer">[<i class="ai ai-arxiv"></i> Arxiv]</a>
+						<a href='resources/paper.pdf' target="_blank" rel="noopener noreferrer">[<i class="fas fa-file-pdf"></i> Paper]</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- bibtex citation -->
+		<p class="section" id="bibtex"><b>Bibtex</b></p>
+		<table border="0">
+		<tbody>
+			<pre class="command-copy" 
+			style=" display: block;
+					background: #eee;
+					white-space: pre;
+					-webkit-overflow-scrolling: touch;
+					max-width: 100%;
+					min-width: 100px;
+					border-radius: 20px;
+					padding: 0;;">
+
+                <!--bibtex here-->
+			</pre>
+		</tbody>
+		</table>
+		<!-- end bibtex citation -->
+
+		<div class="container-xl">
+			<p class="text-left">
+				More results and further discussion about our method can be found in the <a href="resources/supp.pdf" target="_blank" rel="noopener noreferrer">supplementary material</a>.<br>
+				Our official code implementation can be found in the official <a href="https://github.com/EliasNehme/NPPC" target="_blank" rel="noopener noreferrer">github repository</a> (Comming soon...).
+			</p>
+		</div>
+
+		<center>
+			<table class="table" width="1" style="max-width: 400px;">
+				<tbody>
+					<tr>
+						<td width="50%" style="text-align: center;">
+							<a target="_blank" rel="noopener noreferrer" href="resources/supp.pdf" style="color:black !important;">
+								<img alt="" id="supp" class="round" width="100%" style="max-width:150px" border="1px solid" src="./resources/supp.jpg"/>
+							</a>
+						</td>
+						<td width="50%" style="text-align: center;">
+							<a href="https://github.com/EliasNehme/NPPC" target="_blank" rel="noopener noreferrer">
+								<img alt="" id="github_logo" class="round" width="100%" style="max-width:150px" src="./resources/github_logo.png"/>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td style="font-size:14pt; text-align: center;">
+							<a href='resources/supp.pdf' target="_blank" rel="noopener noreferrer">[Supplementary]</a>
+						</td>
+						<td style="font-size:14pt; text-align: center;">
+							<a target="_blank" rel="noopener noreferrer" href='https://github.com/EliasNehme/NPPC'>[Code - Comming soon...]</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</center>
+
+		<hr>
+		<br>
+
+		<!-- acknowledgement -->
+		<div class="container-xl">
+			<center><h3>Acknowledgements</h3></center>
+			<p style="font-size: 11pt;">
+				This webpage was originally made by <a href="https://www.linkedin.com/in/matan-kleiner/" target="_blank" rel="noopener noreferrer">Matan Kleiner</a> with the 
+				help of <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/hilamanor/">Hila Manor</a> 
+				for <a target="_blank" rel="noopener noreferrer" href="https://matankleiner.github.io/sinddm/">SinDDM</a> and can be used as a template.<br>
+				It is inspired by the template that was originally made by <a target="_blank" rel="noopener noreferrer" href="http://web.mit.edu/phillipi/">Phillip Isola</a> and
+				<a target="_blank" rel="noopener noreferrer" href="http://richzhang.github.io/">Richard Zhang</a> for a <a target="_blank" rel="noopener noreferrer" href="http://richzhang.github.io/colorization/">colorful</a> ECCV project;
+				the code for the original template can be found <a target="_blank" rel="noopener noreferrer" href="https://github.com/richzhang/webpage-template">here</a>.<br>
+				A lot of features are taken from <a target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/">bootstrap</a>. All icons are taken from <a target="_blank" rel="noopener noreferrer" href="https://fontawesome.com/">font awesome</a>.
+				<br>
+				</a>
+			</p>
+		</div>
+	<br>
+
+</div>
+
+<script src="functionality.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
