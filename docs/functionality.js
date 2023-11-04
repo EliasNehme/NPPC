@@ -37,5 +37,99 @@ $(document).ready(function () {
     $('.closer').on('click', function () {
         $('.btn-group').removeClass('open');
     });
+
+    // let options = ["faces-514", "faces-34", "faces-213", "faces-227", "parrot", "tiger", "mice"];
+    // let range_values = ["0.00", "0.12", "0.24", "0.36", "0.48", "0.60", "0.72", "0.84", "0.96", "1.08", "1.20",
+    //                     "1.32", "1.44", "1.56", "1.68", "1.80", "1.92", "2.04", "2.16", "2.28", "2.40", "2.52",
+    //                     "2.64", "2.76", "2.88", "3.00", "-0.12", "-0.24", "-0.36", "-0.48", "-0.60", "-0.72",
+    //                     "-0.84", "-0.96", "-1.08", "-1.20", "-1.32", "-1.44", "-1.56", "-1.68", "-1.80",
+    //                     "-1.92", "-2.04", "-2.16", "-2.28", "-2.40", "-2.52", "-2.64", "-2.76", "-2.88", "-3.00"];
+
+    // options.forEach(option => {
+    //     let imageBasePath = "./resources/" + option + "/ev";
+    //     let imagesUrlArray = [];
+    //     for (let ev_i = 1; ev_i <= 5 ; ev_i++) {
+    //         // Less requests:
+    //         if (option.startsWith("faces-514") && ev_i == 5)
+    //             continue;
+    //         else if ((option.startsWith("tiger") || option.startsWith("mice") || option.startsWith("faces")) && ev_i > 3)
+    //             continue;
+
+    //         let imageBasePath_ev = imageBasePath + String(ev_i) + "_";
+    //         range_values.forEach(rv => {
+    //             imagesUrlArray.push(imageBasePath_ev + rv + ".png");
+    //             if (!option.startsWith("faces"))
+    //                 imagesUrlArray.push(imageBasePath_ev + rv + "_prob.png");
+    //         });
+    //     }
+    //     loadImages(imagesUrlArray).then(images => {
+    //         $("#range-" + option)[0].disabled = false;
+    //         $("#range-" + option)[0].classList.remove("custom-range-disabled");
+    //         $("#range-" + option)[0].classList.add("custom-range");
+    //     });
+    // });
+
 });
 
+async function loadImages(imageUrlArray) {
+    // taken from https://stackoverflow.com/questions/37854355/wait-for-image-loading-to-complete-in-javascript
+    const promiseArray = []; // create an array for promises
+    const imageArray = []; // array for the images
+
+    for (let imageUrl of imageUrlArray) {
+
+        promiseArray.push(new Promise(resolve => {
+
+            const img = new Image();
+            // if you don't need to do anything when the image loads,
+            // then you can just write img.onload = resolve;
+            img.onload = resolve();  // resolve the promise, indicating that the image has been loaded
+
+            img.src = imageUrl;
+            imageArray.push(img);
+        }));
+    }
+
+    await Promise.all(promiseArray); // wait for all the images to be loaded
+    return imageArray;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ image slider ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$('input[type=range]').on('input', function () {
+    // $(this).trigger('change');
+    let current_input_id = $(this)[0].id;
+    let folder_img_num = current_input_id.substr(current_input_id.indexOf("-") + 1);
+    let folder_name = folder_img_num.substr(0, folder_img_num.indexOf("-"))
+    let img_num = folder_img_num.substr(folder_img_num.indexOf("-") + 1);
+    let newValue = parseFloat($(this)[0].value).toFixed(2);
+
+    let cur_ev = $("#imgChange-" + folder_name + "-" + img_num)[0].dataset.value;
+    swapVizImAndText(folder_name, img_num, cur_ev, newValue);
+});
+
+
+function swapVizImAndText(folder_name, img_num, cur_ev, newValue) {
+    $("#imgChange-" + folder_name + "-" + img_num)[0].src = "./resources/imgs/" + folder_name + "/im_" + img_num + "/img_" + img_num + "_pc_" + cur_ev + "_alpha_" + newValue + ".png";
+    if (newValue == "0.00") {
+        $("#txtChange-" + folder_name + "-" + img_num)[0].innerHTML = "\\[\\hat{x} + 0.00 \\sigma\\]"; // (MSE-optimal)";
+    } else {
+        if (newValue.startsWith("-"))
+            $("#txtChange-" + folder_name + "-" + img_num)[0].innerHTML = "\\[\\hat{x} " + newValue + " \\sigma\\]";
+        else
+            $("#txtChange-" + folder_name + "-" + img_num)[0].innerHTML = "\\[\\hat{x} + " + newValue + " \\sigma\\]";
+    }
+    MathJax.typeset();
+}
+
+function change_ev(folder_name, img_num, newEV) {
+    $('#imgEV-' + folder_name + "-" + img_num)[0].src = "./resources/imgs/" + folder_name + "/im_" + img_num + "/img_" + img_num + "_dir_" + newEV + ".png";
+    $('#txtEV-' + folder_name + "-" + img_num)[0].innerHTML = "PC #" + newEV;
+
+    $("#imgChange-" + folder_name + "-" + img_num)[0].dataset.value = newEV;
+    $("#range-" + folder_name + "-" + img_num)[0].value = 0.00;
+
+    swapVizImAndText(folder_name, img_num, newEV, "0.00");
+}
+
+window.addEventListener('load', () => {
+});

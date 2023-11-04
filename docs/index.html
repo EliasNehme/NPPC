@@ -3,7 +3,8 @@
 <!doctype html>
 <html>
 <head>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="https://icons8.com/icon/YZt5E5eA2wQR/dice.png"> -->
+	<link rel="icon" type="image/png" href="icons8-dice-64.png">
 
 	<title>Uncertainty Quantification via Neural Posterior Principal Components</title>
     <!-- Required meta tags -->
@@ -33,7 +34,10 @@
 			</button>
 			<div class="collapse navbar-collapse" id="main_nav">
 			<ul class="navbar-nav ms-auto">
-				<li class="nav-item"><a class="nav-link" href="#coming-soon">Coming Soon...</a></li>
+				<li class="nav-item"><a class="nav-link" href="#mnist-viz">Handwritten Digits</a></li>
+				<li class="nav-item"><a class="nav-link" href="#celebahq-viz">Human Faces</a></li>
+				<li class="nav-item"><a class="nav-link" href="#bio-viz">Bioimage Translation</a></li>
+				<li class="nav-item"><a class="nav-link" href="#more-samples">More Samples</a></li>
 				<li class="nav-item"><a class="nav-link" href="#paper">Paper</a></li>
 			</ul>
 			</div> 
@@ -51,7 +55,7 @@
 		<!-- top - author names, affiliation and links -->
 		<center>
 			<h1>Uncertainty Quantification via Neural Posterior Principal Components</h1>
-			<h4>NeurIPS 2023</h4>
+			<h2>NeurIPS 2023</h2>
 			<div class="container-xl">
 				<div class="row justify-content-center">
 					<div class="col-md-auto">
@@ -77,20 +81,84 @@
 						<span style="font-size:24px"><a href='resources/supp.pdf' target="_blank" rel="noopener noreferrer">[<i class="fas fa-file-pdf"></i> Supplementary]</a></span>
 					</div>
 					<div class="col-md-auto">
-						<span style="font-size:24px"><a href="https://github.com/EliasNehme/NPPC" target="_blank" rel="noopener noreferrer">[<i class="fab fa-github"></i> Code - Coming Soon...]</a></span>
+						<span style="font-size:24px"><a href="https://github.com/EliasNehme/NPPC" target="_blank" rel="noopener noreferrer">[<i class="fab fa-github"></i> Code (soon)]</a></span>
 					</div>
 				</div>
 			</div>
 		</center>
 		<!-- end top -->
 
-		<!-- abstract and teaser image-->
+		<!-- abstract and teasers -->
 		<center>
-			<div class="container-xl" style="margin-top: 20px; max-width: 800px">
-                <video autoplay loop muted playsinline controls width="100%">
-                    <source src="./resources/intro_video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>                  
+			<div class="container-xl" style="margin-top: 20px;">
+				<div class="row gy-3 row-cols-1 row-cols-sm-3 row-cols-md-6 justify-content-center">
+					
+					<!-- start of teaser 1 -->
+					<div class="col" style="max-width: 350px;">
+						<center>
+							<video autoplay loop muted playsinline controls width="100%">
+								<source src="./resources/vid_mnist_denoising_teaser_4_3std.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video> 
+						</center>
+					</div>
+					<!-- end of teaser 1 -->
+	
+					<!-- start of teaser 2 -->
+					<div class="col" style="max-width: 350px;">
+						<center>
+							<video autoplay loop muted playsinline controls width="100%">
+								<source src="./resources/vid_mnist_inpainting_teaser_0_3std.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video> 
+						</center>
+					</div>
+					<!-- end of teaser 2 -->
+	
+					<!-- start of teaser 3 -->
+					<div class="col" style="max-width: 350px;">
+						<center>
+							<video autoplay loop muted playsinline controls width="100%">
+								<source src="./resources/vid_celebahq_inpainting_mouth_teaser_15_3std.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video> 
+						</center>
+					</div>
+					<!-- end of teaser 3 -->
+	
+					<!-- start of teaser 4 -->
+					<div class="col" style="max-width: 350px;">
+						<center>
+							<video autoplay loop muted playsinline controls width="100%">
+								<source src="./resources/vid_celebahq_superres_teaser_15_3std.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video> 
+						</center>
+					</div>
+					<!-- end of teaser 4 -->
+	
+					<!-- start of teaser 5 -->
+					<div class="col" style="max-width: 350px;">
+						<center>
+							<video autoplay loop muted playsinline controls width="100%">
+								<source src="./resources/vid_celebahq_colorization_teaser_9_3std.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video> 
+						</center>
+					</div>
+					<!-- end of teaser 5 -->
+	
+					<!-- start of teaser 6 -->
+					<div class="col" style="max-width: 350px;">
+						<center>
+							<video autoplay loop muted playsinline controls width="100%">
+								<source src="./resources/vid_bio_teaser_15_3std.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video> 
+						</center>
+					</div>
+					<!-- end of teaser 6 -->
+				</div>
 			</div>
 		<h1 style="margin-top: 10px;">Abstract</h1>
 		</center>
@@ -115,31 +183,841 @@
             directions, achieving uncertainty quantification comparable with posterior samplers 
             while being orders of magnitude faster.
         </p>
-	
-		<hr id="coming-soon">
-		<center><h1 style="margin-top: 65px;">Coming Soon...</h1></center>
+
+
+		<hr id="mnist-viz">
+		<center><h1 style="margin-top: 65px;">Handwritten Digits</h1></center>
+		<p>Visualizing the uncertainty in MNIST digits denoising/inpainting (Please allow a ~sec for the image to update after each slider move).</p>
+            <!-- <p>(Please allow a ~sec for the image to update after each slider move).</p> -->
 		
+		<div class="container-xl">
+			<div class="row gy-3 row-cols-1 row-cols-sm-3 row-cols-md-6 justify-content-center">
+				<!-- start of image 1 -->
+                <div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/mnist_denoising/im_4/img_4_distorted.png" width="100%" style="max-width: 200px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 350px;"><center>
+                    <img class="pixelated" id="imgEV-mnist_denoising-4" src="./resources/imgs/mnist_denoising/im_4/img_4_dir_1.png" width="100%" style="max-width: 200px;">
+                    <p id="txtEV-mnist_denoising-4" style="margin-top: 5px;">PC #1</p>
+                    <div class="btn-group my-btn" id="dropdown-container-mnist_denoising-4">
+                        <button type="button" onclick="change_ev('mnist_denoising', '4', 1)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '4', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '4', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '4', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '4', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '4', 1)">1</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" id="imgChange-mnist_denoising-4" src="./resources/imgs/mnist_denoising/im_4/img_4_pc_1_alpha_0.00.png" width="100%" style="max-width: 200px;" data-value="1">
+                        <p id="txtChange-mnist_denoising-4" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-mnist_denoising-4" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 200px;"> 
+					</center>
+				</div>
+				<!-- end of image 1 -->
+
+				<!-- start of image 2 -->
+                <!-- <div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/mnist_denoising/im_12/img_12_distorted.png" width="100%" style="max-width: 200px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 350px;"><center>
+                    <img class="pixelated" id="imgEV-mnist_denoising-12" src="./resources/imgs/mnist_denoising/im_12/img_12_dir_1.png" width="100%" style="max-width: 200px;">
+                    <p id="txtEV-mnist_denoising-12" style="margin-top: 5px;">PC #1</p>
+                    <div class="btn-group my-btn" id="dropdown-container-mnist_denoising-12">
+                        <button type="button" onclick="change_ev('mnist_denoising', '12', 1)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '12', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '12', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '12', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '12', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '12', 1)">1</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" id="imgChange-mnist_denoising-12" src="./resources/imgs/mnist_denoising/im_12/img_12_pc_1_alpha_0.00.png" width="100%" style="max-width: 200px;" data-value="1">
+                        <p id="txtChange-mnist_denoising-12" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-mnist_denoising-12" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 200px;"> 
+					</center>
+				</div> -->
+				<!-- end of image 2 -->
+
+				<!-- start of image 3 -->
+                <!-- <div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/mnist_denoising/im_13/img_13_distorted.png" width="100%" style="max-width: 200px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 350px;"><center>
+                    <img class="pixelated" id="imgEV-mnist_denoising-13" src="./resources/imgs/mnist_denoising/im_13/img_13_dir_1.png" width="100%" style="max-width: 200px;">
+                    <p id="txtEV-mnist_denoising-13" style="margin-top: 5px;">PC #1</p>
+                    <div class="btn-group my-btn" id="dropdown-container-mnist_denoising-13">
+                        <button type="button" onclick="change_ev('mnist_denoising', '13', 1)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '13', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '13', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '13', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '13', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '13', 1)">1</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" id="imgChange-mnist_denoising-13" src="./resources/imgs/mnist_denoising/im_13/img_13_pc_1_alpha_0.00.png" width="100%" style="max-width: 200px;" data-value="1">
+                        <p id="txtChange-mnist_denoising-13" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-mnist_denoising-13" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 200px;"> 
+					</center>
+				</div> -->
+				<!-- end of image 3 -->
+
+				<!-- start of image 4 -->
+                <div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/mnist_denoising/im_23/img_23_distorted.png" width="100%" style="max-width: 200px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 350px;"><center>
+                    <img class="pixelated" id="imgEV-mnist_denoising-23" src="./resources/imgs/mnist_denoising/im_23/img_23_dir_1.png" width="100%" style="max-width: 200px;">
+                    <p id="txtEV-mnist_denoising-23" style="margin-top: 5px;">PC #1</p>
+                    <div class="btn-group my-btn" id="dropdown-container-mnist_denoising-23">
+                        <button type="button" onclick="change_ev('mnist_denoising', '23', 1)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '23', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '23', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '23', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '23', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('mnist_denoising', '23', 1)">1</a></li>
+                        </ul>
+                    </div>
+                    <!-- </center>
+                </div>
+                <div class="col-sm" style="max-width: 350px;"><center> -->
+                </center>
+                </div>
+				<div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" id="imgChange-mnist_denoising-23" src="./resources/imgs/mnist_denoising/im_23/img_23_pc_1_alpha_0.00.png" width="100%" style="max-width: 200px;" data-value="1">
+                        <p id="txtChange-mnist_denoising-23" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-mnist_denoising-23" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 200px;"> 
+					</center>
+				</div>
+				<!-- end of image 4 -->
+
+				<!-- start of image 5 -->
+                <div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/mnist_inpainting/im_0/img_0_distorted.png" width="100%" style="max-width: 200px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 350px;"><center>
+                    <img class="pixelated" id="imgEV-mnist_inpainting-0" src="./resources/imgs/mnist_inpainting/im_0/img_0_dir_1.png" width="100%" style="max-width: 200px;">
+                    <p id="txtEV-mnist_inpainting-0" style="margin-top: 5px;">PC #1</p>
+                    <div class="btn-group my-btn" id="dropdown-container-mnist_inpainting-0">
+                        <button type="button" onclick="change_ev('mnist_inpainting', '0', 1)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('mnist_inpainting', '0', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_inpainting', '0', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_inpainting', '0', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_inpainting', '0', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('mnist_inpainting', '0', 1)">1</a></li>
+                        </ul>
+                    </div>
+                    <!-- </center>
+                </div>
+                <div class="col-sm" style="max-width: 350px;"><center> -->
+                </center>
+                </div>
+				<div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" id="imgChange-mnist_inpainting-0" src="./resources/imgs/mnist_inpainting/im_0/img_0_pc_1_alpha_0.00.png" width="100%" style="max-width: 200px;" data-value="1">
+                        <p id="txtChange-mnist_inpainting-0" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-mnist_inpainting-0" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 200px;"> 
+					</center>
+				</div>
+				<!-- end of image 5 -->
+
+				<!-- start of image 6 -->
+                <div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/mnist_inpainting/im_15/img_15_distorted.png" width="100%" style="max-width: 200px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 350px;"><center>
+                    <img class="pixelated" id="imgEV-mnist_inpainting-15" src="./resources/imgs/mnist_inpainting/im_15/img_15_dir_1.png" width="100%" style="max-width: 200px;">
+                    <p id="txtEV-mnist_inpainting-15" style="margin-top: 5px;">PC #1</p>
+                    <div class="btn-group my-btn" id="dropdown-container-mnist_inpainting-15">
+                        <button type="button" onclick="change_ev('mnist_inpainting', '15', 1)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('mnist_inpainting', '15', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_inpainting', '15', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_inpainting', '15', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('mnist_inpainting', '15', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('mnist_inpainting', '15', 1)">1</a></li>
+                        </ul>
+                    </div>
+                    <!-- </center>
+                </div>
+                <div class="col-sm" style="max-width: 350px;"><center> -->
+                </center>
+                </div>
+				<div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" id="imgChange-mnist_inpainting-15" src="./resources/imgs/mnist_inpainting/im_15/img_15_pc_1_alpha_0.00.png" width="100%" style="max-width: 200px;" data-value="1">
+                        <p id="txtChange-mnist_inpainting-15" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-mnist_inpainting-15" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 200px;"> 
+					</center>
+				</div>
+				<!-- end of image 6 -->
+
+            </div>
+        </div>
+		<!-- End of MNIST -->
+		
+		<!-- Start of CelebAHQ -->
+		<hr id="celebahq-viz">
+		<center><h1 style="margin-top: 65px;">Human Faces</h1></center>
+		<p>Visualizing reconstruction uncertainty in CelebAHQ faces for the tasks of 8x noisy super-resolution, inpainting, and colorization.</p>
+		
+		<div class="container-xl">
+			<div class="row gy-3 row-cols-1 row-cols-sm-3 row-cols-md-6 justify-content-center">
+				<!-- start of image 3 -->
+                <div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/celeba_inpainting_eyes/im_0/img_0_distorted.png" width="100%" style="max-width: 400px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 450px;"><center>
+                    <img class="pixelated" id="imgEV-celeba_inpainting_eyes-0" src="./resources/imgs/celeba_inpainting_eyes/im_0/img_0_dir_1.png" width="100%" style="max-width: 400px;">
+                    <p id="txtEV-celeba_inpainting_eyes-0" style="margin-top: 5px;">PC #1</p>
+                    <div class="btn-group my-btn" id="dropdown-container-celeba_inpainting_eyes-0">
+                        <button type="button" onclick="change_ev('celeba_inpainting_eyes', '0', 1)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_eyes', '0', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_eyes', '0', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_eyes', '0', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_eyes', '0', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_eyes', '0', 1)">1</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" id="imgChange-celeba_inpainting_eyes-0" src="./resources/imgs/celeba_inpainting_eyes/im_0/img_0_pc_1_alpha_0.00.png" width="100%" style="max-width: 400px;" data-value="1">
+                        <p id="txtChange-celeba_inpainting_eyes-0" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-celeba_inpainting_eyes-0" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 400px;"> 
+					</center>
+				</div>
+				<!-- end of image 3 -->
+
+				<!-- start of image 4 -->
+                <div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/celeba_inpainting_eyes/im_7/img_7_distorted.png" width="100%" style="max-width: 400px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 450px;"><center>
+                    <img class="pixelated" id="imgEV-celeba_inpainting_eyes-7" src="./resources/imgs/celeba_inpainting_eyes/im_7/img_7_dir_4.png" width="100%" style="max-width: 400px;">
+                    <p id="txtEV-celeba_inpainting_eyes-7" style="margin-top: 5px;">PC #4</p>
+                    <div class="btn-group my-btn" id="dropdown-container-celeba_inpainting_eyes-7">
+                        <button type="button" onclick="change_ev('celeba_inpainting_eyes', '7', 4)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_eyes', '7', 1)">1</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_eyes', '7', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_eyes', '7', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_eyes', '7', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_eyes', '7', 4)">4</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" id="imgChange-celeba_inpainting_eyes-7" src="./resources/imgs/celeba_inpainting_eyes/im_7/img_7_pc_4_alpha_0.00.png" width="100%" style="max-width: 400px;" data-value="4">
+                        <p id="txtChange-celeba_inpainting_eyes-7" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-celeba_inpainting_eyes-7" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 400px;"> 
+					</center>
+				</div>
+				<!-- end of image 4 -->
+
+				<!-- start of image 5 -->
+                <div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/celeba_inpainting_mouth/im_15/img_15_distorted.png" width="100%" style="max-width: 400px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 450px;"><center>
+                    <img class="pixelated" id="imgEV-celeba_inpainting_mouth-15" src="./resources/imgs/celeba_inpainting_mouth/im_15/img_15_dir_2.png" width="100%" style="max-width: 400px;">
+                    <p id="txtEV-celeba_inpainting_mouth-15" style="margin-top: 5px;">PC #2</p>
+                    <div class="btn-group my-btn" id="dropdown-container-celeba_inpainting_mouth-15">
+                        <button type="button" onclick="change_ev('celeba_inpainting_mouth', '15', 2)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_mouth', '15', 1)">1</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_mouth', '15', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_mouth', '15', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_mouth', '15', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_mouth', '15', 2)">2</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" id="imgChange-celeba_inpainting_mouth-15" src="./resources/imgs/celeba_inpainting_mouth/im_15/img_15_pc_2_alpha_0.00.png" width="100%" style="max-width: 400px;" data-value="2">
+                        <p id="txtChange-celeba_inpainting_mouth-15" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-celeba_inpainting_mouth-15" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 400px;"> 
+					</center>
+				</div>
+				<!-- end of image 5 -->
+
+				<!-- start of image 6 -->
+                <div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/celeba_inpainting_mouth/im_9/img_9_distorted.png" width="100%" style="max-width: 400px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 450px;"><center>
+                    <img class="pixelated" id="imgEV-celeba_inpainting_mouth-9" src="./resources/imgs/celeba_inpainting_mouth/im_9/img_9_dir_1.png" width="100%" style="max-width: 400px;">
+                    <p id="txtEV-celeba_inpainting_mouth-9" style="margin-top: 5px;">PC #1</p>
+                    <div class="btn-group my-btn" id="dropdown-container-celeba_inpainting_mouth-9">
+                        <button type="button" onclick="change_ev('celeba_inpainting_mouth', '9', 1)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_mouth', '9', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_mouth', '9', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_mouth', '9', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_mouth', '9', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_inpainting_mouth', '9', 1)">1</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" id="imgChange-celeba_inpainting_mouth-9" src="./resources/imgs/celeba_inpainting_mouth/im_9/img_9_pc_1_alpha_0.00.png" width="100%" style="max-width: 400px;" data-value="1">
+                        <p id="txtChange-celeba_inpainting_mouth-9" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-celeba_inpainting_mouth-9" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 400px;"> 
+					</center>
+				</div>
+				<!-- end of image 6 -->
+
+				<!-- start of image 1 -->
+                <div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/celeba_super_resolution/im_15/img_15_distorted.png" width="100%" style="max-width: 400px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 450px;"><center>
+                    <img class="pixelated" id="imgEV-celeba_super_resolution-15" src="./resources/imgs/celeba_super_resolution/im_15/img_15_dir_1.png" width="100%" style="max-width: 400px;">
+                    <p id="txtEV-celeba_super_resolution-15" style="margin-top: 5px;">PC #1</p>
+                    <div class="btn-group my-btn" id="dropdown-container-celeba_super_resolution-15">
+                        <button type="button" onclick="change_ev('celeba_super_resolution', '15', 1)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_super_resolution', '15', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_super_resolution', '15', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_super_resolution', '15', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_super_resolution', '15', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_super_resolution', '15', 1)">1</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" id="imgChange-celeba_super_resolution-15" src="./resources/imgs/celeba_super_resolution/im_15/img_15_pc_1_alpha_0.00.png" width="100%" style="max-width: 400px;" data-value="1">
+                        <p id="txtChange-celeba_super_resolution-15" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-celeba_super_resolution-15" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 400px;"> 
+					</center>
+				</div>
+				<!-- end of image 1 -->
+
+				<!-- start of image 2 -->
+                <div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/celeba_super_resolution/im_10/img_10_distorted.png" width="100%" style="max-width: 400px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 450px;"><center>
+                    <img class="pixelated" id="imgEV-celeba_super_resolution-10" src="./resources/imgs/celeba_super_resolution/im_10/img_10_dir_1.png" width="100%" style="max-width: 400px;">
+                    <p id="txtEV-celeba_super_resolution-10" style="margin-top: 5px;">PC #1</p>
+                    <div class="btn-group my-btn" id="dropdown-container-celeba_super_resolution-10">
+                        <button type="button" onclick="change_ev('celeba_super_resolution', '10', 1)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_super_resolution', '10', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_super_resolution', '10', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_super_resolution', '10', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_super_resolution', '10', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_super_resolution', '10', 1)">1</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" id="imgChange-celeba_super_resolution-10" src="./resources/imgs/celeba_super_resolution/im_10/img_10_pc_1_alpha_0.00.png" width="100%" style="max-width: 400px;" data-value="1">
+                        <p id="txtChange-celeba_super_resolution-10" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-celeba_super_resolution-10" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 400px;"> 
+					</center>
+				</div>
+				<!-- end of image 2 -->
+
+				<!-- start of image 7 -->
+                <div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/celeba_colorization/im_9/img_9_distorted.png" width="100%" style="max-width: 400px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 450px;"><center>
+                    <img class="pixelated" id="imgEV-celeba_colorization-9" src="./resources/imgs/celeba_colorization/im_9/img_9_dir_1.png" width="100%" style="max-width: 400px;">
+                    <p id="txtEV-celeba_colorization-9" style="margin-top: 5px;">PC #1</p>
+                    <div class="btn-group my-btn" id="dropdown-container-celeba_colorization-9">
+                        <button type="button" onclick="change_ev('celeba_colorization', '9', 1)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_colorization', '9', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_colorization', '9', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_colorization', '9', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_colorization', '9', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_colorization', '9', 1)">1</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" id="imgChange-celeba_colorization-9" src="./resources/imgs/celeba_colorization/im_9/img_9_pc_1_alpha_0.00.png" width="100%" style="max-width: 400px;" data-value="1">
+                        <p id="txtChange-celeba_colorization-9" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-celeba_colorization-9" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 400px;"> 
+					</center>
+				</div>
+				<!-- end of image 7 -->
+
+				<!-- start of image 8 -->
+                <div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/celeba_colorization/im_10/img_10_distorted.png" width="100%" style="max-width: 400px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 450px;"><center>
+                    <img class="pixelated" id="imgEV-celeba_colorization-10" src="./resources/imgs/celeba_colorization/im_10/img_10_dir_1.png" width="100%" style="max-width: 400px;">
+                    <p id="txtEV-celeba_colorization-10" style="margin-top: 5px;">PC #1</p>
+                    <div class="btn-group my-btn" id="dropdown-container-celeba_colorization-10">
+                        <button type="button" onclick="change_ev('celeba_colorization', '10', 1)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_colorization', '10', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_colorization', '10', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_colorization', '10', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('celeba_colorization', '10', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('celeba_colorization', '10', 1)">1</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 450px;">
+					<center>
+                        <img class="pixelated" id="imgChange-celeba_colorization-10" src="./resources/imgs/celeba_colorization/im_10/img_10_pc_1_alpha_0.00.png" width="100%" style="max-width: 400px;" data-value="1">
+                        <p id="txtChange-celeba_colorization-10" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-celeba_colorization-10" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 400px;"> 
+					</center>
+				</div>
+				<!-- end of image 8 -->
+				
+            </div>
+        </div>
+		<!-- End of CelebAHQ -->
+		
+		<!-- Start of Bio im2im -->
+		<hr id="bio-viz">
+		<center><h1 style="margin-top: 65px;">Biological Image-to-image Translation</h1></center>
+		<p>Here, we apply NPPC to the task of translating the image of a (microscopic) biological specimen from one fluorescent dye to another:</p>
+		<center>
+			<div class="container-xl">
+				<div class="row justify-content-center">
+					<!-- video dropdown -->
+					<div class="col-sm" style="max-width: 1000px;">
+                        <video autoplay loop muted controls width="100%">
+                            <source src="./resources/bio_task_video.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>       
+					</div>
+				</div>
+			</div>
+		</center>
+
+		<p>Visualizing the uncertainty in bioimage translation, where nuclear stains (cells) are predicted from actin stains (cytoskeletons).</p>
+		
+		<div class="container-xl">
+			<div class="row gy-3 row-cols-1 row-cols-sm-3 row-cols-md-6 justify-content-center">
+				<!-- start of image 1 -->
+                <div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/bio/im_15/img_15_distorted.png" width="100%" style="max-width: 200px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 350px;"><center>
+                    <img class="pixelated" id="imgEV-bio-15" src="./resources/imgs/bio/im_15/img_15_dir_2.png" width="100%" style="max-width: 200px;">
+                    <p id="txtEV-bio-15" style="margin-top: 5px;">PC #2</p>
+                    <div class="btn-group my-btn" id="dropdown-container-bio-15">
+                        <button type="button" onclick="change_ev('bio', '15', 2)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('bio', '15', 1)">1</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('bio', '15', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('bio', '15', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('bio', '15', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('bio', '15', 2)">2</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" id="imgChange-bio-15" src="./resources/imgs/bio/im_15/img_15_pc_2_alpha_0.00.png" width="100%" style="max-width: 200px;" data-value="2">
+                        <p id="txtChange-bio-15" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-bio-15" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 200px;"> 
+					</center>
+				</div>
+				<!-- end of image 1 -->
+
+				<!-- start of image 4 -->
+                <div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/bio/im_17/img_17_distorted.png" width="100%" style="max-width: 200px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 350px;"><center>
+                    <img class="pixelated" id="imgEV-bio-17" src="./resources/imgs/bio/im_17/img_17_dir_2.png" width="100%" style="max-width: 200px;">
+                    <p id="txtEV-bio-17" style="margin-top: 5px;">PC #2</p>
+                    <div class="btn-group my-btn" id="dropdown-container-bio-15">
+                        <button type="button" onclick="change_ev('bio', '17', 2)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('bio', '17', 1)">1</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('bio', '17', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('bio', '17', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('bio', '17', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('bio', '17', 2)">2</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" id="imgChange-bio-17" src="./resources/imgs/bio/im_17/img_17_pc_2_alpha_0.00.png" width="100%" style="max-width: 200px;" data-value="2">
+                        <p id="txtChange-bio-17" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-bio-17" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 200px;"> 
+					</center>
+				</div>
+				<!-- end of image 4 -->
+
+				<!-- start of image 3 -->
+                <div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/bio/im_23/img_23_distorted.png" width="100%" style="max-width: 200px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 350px;"><center>
+                    <img class="pixelated" id="imgEV-bio-23" src="./resources/imgs/bio/im_23/img_23_dir_2.png" width="100%" style="max-width: 200px;">
+                    <p id="txtEV-bio-23" style="margin-top: 5px;">PC #2</p>
+                    <div class="btn-group my-btn" id="dropdown-container-bio-23">
+                        <button type="button" onclick="change_ev('bio', '23', 2)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('bio', '23', 1)">1</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('bio', '23', 3)">3</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('bio', '23', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('bio', '23', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('bio', '23', 2)">2</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" id="imgChange-bio-23" src="./resources/imgs/bio/im_23/img_23_pc_2_alpha_0.00.png" width="100%" style="max-width: 200px;" data-value="2">
+                        <p id="txtChange-bio-23" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-bio-23" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 200px;"> 
+					</center>
+				</div>
+				<!-- end of image 3 -->
+
+				<!-- start of image 2 -->
+                <div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" src="./resources/imgs/bio/im_18/img_18_distorted.png" width="100%" style="max-width: 200px;">
+                        <p style="margin-top: 5px;">Input Image</p>
+					</center>
+				</div>
+                <div class="col" style="max-width: 1850px;"><center>
+                    <img class="pixelated" id="imgEV-bio-18" src="./resources/imgs/bio/im_18/img_18_dir_3.png" width="100%" style="max-width: 200px;">
+                    <p id="txtEV-bio-18" style="margin-top: 5px;">PC #3</p>
+                    <div class="btn-group my-btn" id="dropdown-container-bio-18">
+                        <button type="button" onclick="change_ev('bio', '18', 3)" class="btn btn-info">Change PC</button>
+                        <button type="button" class="btn my-btn-info btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="change_ev('bio', '18', 1)">1</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('bio', '18', 2)">2</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('bio', '18', 4)">4</a></li>
+							<li><a class="dropdown-item" onclick="change_ev('bio', '18', 5)">5</a></li>
+                            <li><hr class="dropdown-divider"></li> 
+                            <li><a class="dropdown-item" onclick="change_ev('bio', '18', 3)">3</a></li>
+                        </ul>
+                    </div>
+                </center>
+                </div>
+				<div class="col" style="max-width: 350px;">
+					<center>
+                        <img class="pixelated" id="imgChange-bio-18" src="./resources/imgs/bio/im_18/img_18_pc_3_alpha_0.00.png" width="100%" style="max-width: 200px;" data-value="3">
+                        <p id="txtChange-bio-18" style="margin-top: 5px;">\[\hat{x} + 0.00 \sigma\]</p>
+						<input id="range-bio-18" type="range" min="-3" max="3" step="0.25" value="0" class="form-range" style="max-width: 200px;"> 
+					</center>
+				</div>
+				<!-- end of image 2 -->
+				
+            </div>
+        </div>
+		<!-- End of Bio im2im -->
+
+		<!-- Video -->
+		<hr id="more-samples">
+		<center><h1 style="margin-top: 65px;">More Samples</h1></center>
+		<center>
+			<div class="container-xl">
+				<div class="row justify-content-center">
+					<!-- video dropdown -->
+					<div class="col-sm" style="max-width: 800px;">
+                        <video autoplay loop muted controls width="100%">
+                            <source src="./resources/samples_video.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>       
+					</div>
+				</div>
+			</div>
+		</center>
+		<br>
+		<center>
+			<div class="container-xl" style="margin-top: 20px;">
+				<div class="row gy-3 row-cols-1 row-cols-sm-3 row-cols-md-6 justify-content-center">
+					
+					<!-- start of teaser 1 -->
+					<div class="col" style="max-width: 350px;">
+						<center>
+							<video autoplay loop muted playsinline controls width="100%">
+								<source src="./resources/vid_mnist_denoising_teaser_12_3std.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video> 
+						</center>
+					</div>
+					<!-- end of teaser 1 -->
+	
+					<!-- start of teaser 2 -->
+					<div class="col" style="max-width: 350px;">
+						<center>
+							<video autoplay loop muted playsinline controls width="100%">
+								<source src="./resources/vid_mnist_inpainting_teaser_15_3std.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video> 
+						</center>
+					</div>
+					<!-- end of teaser 2 -->
+	
+					<!-- start of teaser 3 -->
+					<div class="col" style="max-width: 350px;">
+						<center>
+							<video autoplay loop muted playsinline controls width="100%">
+								<source src="./resources/vid_celebahq_inpainting_eyes_teaser_0_3std.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video> 
+						</center>
+					</div>
+					<!-- end of teaser 3 -->
+	
+					<!-- start of teaser 4 -->
+					<div class="col" style="max-width: 350px;">
+						<center>
+							<video autoplay loop muted playsinline controls width="100%">
+								<source src="./resources/vid_celebahq_superres_teaser_10_3std.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video> 
+						</center>
+					</div>
+					<!-- end of teaser 4 -->
+	
+					<!-- start of teaser 5 -->
+					<div class="col" style="max-width: 350px;">
+						<center>
+							<video autoplay loop muted playsinline controls width="100%">
+								<source src="./resources/vid_celebahq_colorization_teaser_10_3std_v2.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video> 
+						</center>
+					</div>
+					<!-- end of teaser 5 -->
+	
+					<!-- start of teaser 6 -->
+					<div class="col" style="max-width: 350px;">
+						<center>
+							<video autoplay loop muted playsinline controls width="100%">
+								<source src="./resources/vid_bio_teaser_17_3std.mp4" type="video/mp4" />
+								Your browser does not support the video tag.
+							</video> 
+						</center>
+					</div>
+					<!-- end of teaser 6 -->
+				</div>
+			</div>
+		</center>
+		<br>
+		<!-- end Video -->
 
 		<!-- Paper -->
 		<hr id="paper">
 		<div class="container-xl">
-			<center><h1 style="margin-top: 65px;">Paper</h1></center>
-			<div class="row justify-content-center">
-				<div class="col-md-auto" style="padding: 1px;">
-					<a href='resources/paper.pdf' target="_blank" rel="noopener noreferrer">
-						<img alt="" class="layered-paper-big" style="height:100%; max-height: 175px;" src="./resources/paper.jpg"/>
-					</a>
-				</div>
-				<div class="col-md-auto" style="padding: 1px;">
-					<p style="font-size:14pt; margin-top: 5px;"><strong>Uncertainty Quantification via Neural Posterior Principal Components</strong><br>
-						Elias Nehme, Omer Yair, Tomer Michaeli.<br>
-						<a href='https://arxiv.org/abs/2309.15533' target="_blank" rel="noopener noreferrer">[<i class="ai ai-arxiv"></i> Arxiv]</a>
-						<a href='resources/paper.pdf' target="_blank" rel="noopener noreferrer">[<i class="fas fa-file-pdf"></i> Paper]</a>
-					</p>
-				</div>
+			<center><h1 style="margin-top: 65px;">Paper</h1>
+			<div class="col-md-auto" style="padding: 1px;">
+				<p style="font-size:14pt; margin-top: 5px;"><strong>Uncertainty Quantification via Neural Posterior Principal Components</strong><br>
+					Elias Nehme, Omer Yair, Tomer Michaeli.<br>
+				</p>
 			</div>
+		</center>
 		</div>
-
+		<center>
+			<table class="table" width="1" style="max-width: 800px;">
+				<tbody>
+					<tr>
+						<td width="25%" style="text-align: center;">
+							<a href='https://arxiv.org/abs/2309.15533' target="_blank" rel="noopener noreferrer">
+								<img alt="" class="layered-paper-big" style="height:100%; max-height: 175px;" src="./resources/arXiv.jpg"/>
+							</a>
+						</td>
+						<td width="25%" style="text-align: center;">
+							<a href='resources/paper.pdf' target="_blank" rel="noopener noreferrer">
+								<img alt="" class="layered-paper-big" style="height:100%; max-height: 175px;" src="./resources/paper.jpg"/>
+							</a>
+						</td>
+						<td width="25%" style="text-align: center;">
+							<a href='resources/supp.pdf' target="_blank" rel="noopener noreferrer">
+								<img alt="" class="layered-paper-big" style="height:100%; max-height: 175px;" src="./resources/supp.jpg"/>
+							</a>
+						</td>
+						<td width="25%" style="text-align: center;">
+							<a href="https://github.com/EliasNehme/NPPC" target="_blank" rel="noopener noreferrer">
+								<img alt="" id="github_logo" class="round" width="100%" style="max-width:150px" src="./resources/github_logo.png"/>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td style="font-size:14pt; text-align: center;">
+							<a href='https://arxiv.org/abs/2309.15533' target="_blank" rel="noopener noreferrer">[<i class="ai ai-arxiv"></i> ArXiv]</a>
+						</td>
+						<td style="font-size:14pt; text-align: center;">
+							<a href='resources/paper.pdf' target="_blank" rel="noopener noreferrer">[<i class="fas fa-file-pdf"></i> Paper]</a>
+						</td>
+						<td style="font-size:14pt; text-align: center;">
+							<a href='resources/supp.pdf' target="_blank" rel="noopener noreferrer">[<i class="fas fa-file-pdf"></i> Supplementary]</a>
+						</td>
+						<td style="font-size:14pt; text-align: center;">
+							<a target="_blank" rel="noopener noreferrer" href='https://github.com/EliasNehme/NPPC'>[Code (soon)]</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</center>
+		
 		<!-- bibtex citation -->
 		<p class="section" id="bibtex"><b>Bibtex</b></p>
 		<table border="0">
@@ -151,55 +1029,45 @@
 					-webkit-overflow-scrolling: touch;
 					max-width: 100%;
 					min-width: 100px;
-					border-radius: 20px;
-					padding: 0;;">
-	
-	@inproceedings{nehme2023uncertainty,
-		title={Uncertainty Quantification via Neural Posterior Principal Components},
-		author={Nehme, Elias and Yair, Omer and Michaeli, Tomer},
-		booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
-		year={2023},
-		url={https://openreview.net/forum?id=nZ0jnXizyR}
-	}
-	</pre>
+					border-radius: 10px;
+					padding: 10;;">
+@inproceedings{nehme2023uncertainty,
+	title={Uncertainty Quantification via Neural Posterior Principal Components},
+	author={Nehme, Elias and Yair, Omer and Michaeli, Tomer},
+	booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+	year={2023},
+	url={https://openreview.net/forum?id=nZ0jnXizyR}
+}</pre>
 		</tbody>
 		</table>
 		<!-- end bibtex citation -->
 
+		<hr>
+		<br>
+
+		<!-- related work -->
 		<div class="container-xl">
-			<p class="text-left">
-				More results and further discussion about our method can be found in the <a href="resources/supp.pdf" target="_blank" rel="noopener noreferrer">supplementary material</a>.<br>
-				Our official code implementation can be found in the official <a href="https://github.com/EliasNehme/NPPC" target="_blank" rel="noopener noreferrer">github repository</a> (Comming soon...).
+			<center><h3>Related work</h3></center>
+			<p style="font-size: 11pt;">
+				In the last few months, the field of uncertainty quantification have witnessed a number of interesting works, including the particularly related approach by <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/hilamanor/">Hila Manor</a>  and <a href="https://tomer.net.technion.ac.il/" target="_blank" rel="noopener noreferrer">Tomer Michaeli</a>:
+				<center>
+				<div class="container-xl">
+					<div class="col-md-auto" style="padding: 1px;">
+						<p style="font-size:14pt; margin-top: 5px;"><strong>On the Posterior Distribution in Denoising:
+							Application to Uncertainty Quantification</strong><br>
+							Hila Manor, Tomer Michaeli. 
+							<a href='https://arxiv.org/abs/2309.13598' target="_blank" rel="noopener noreferrer">[<i class="ai ai-arxiv"></i> ArXiv]</a>
+							<a href='https://hilamanor.github.io/GaussianDenoisingPosterior/' target="_blank" rel="noopener noreferrer">[Project Webpage]</a>
+							<br>
+						</p>
+					</div>
+				</center>
+				</div>
+				For a more thorough discussion of related work, please see our <a href='resources/paper.pdf' target="_blank" rel="noopener noreferrer">full paper</a>.
+				<br>
+				</a>
 			</p>
 		</div>
-
-		<center>
-			<table class="table" width="1" style="max-width: 400px;">
-				<tbody>
-					<tr>
-						<td width="50%" style="text-align: center;">
-							<a target="_blank" rel="noopener noreferrer" href="resources/supp.pdf" style="color:black !important;">
-								<img alt="" id="supp" class="round" width="100%" style="max-width:150px" border="1px solid" src="./resources/supp.jpg"/>
-							</a>
-						</td>
-						<td width="50%" style="text-align: center;">
-							<a href="https://github.com/EliasNehme/NPPC" target="_blank" rel="noopener noreferrer">
-								<img alt="" id="github_logo" class="round" width="100%" style="max-width:150px" src="./resources/github_logo.png"/>
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<td style="font-size:14pt; text-align: center;">
-							<a href='resources/supp.pdf' target="_blank" rel="noopener noreferrer">[Supplementary]</a>
-						</td>
-						<td style="font-size:14pt; text-align: center;">
-							<a target="_blank" rel="noopener noreferrer" href='https://github.com/EliasNehme/NPPC'>[Code - Coming soon...]</a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</center>
-
 		<hr>
 		<br>
 
@@ -213,7 +1081,7 @@
 				It is inspired by the template that was originally made by <a target="_blank" rel="noopener noreferrer" href="http://web.mit.edu/phillipi/">Phillip Isola</a> and
 				<a target="_blank" rel="noopener noreferrer" href="http://richzhang.github.io/">Richard Zhang</a> for a <a target="_blank" rel="noopener noreferrer" href="http://richzhang.github.io/colorization/">colorful</a> ECCV project;
 				the code for the original template can be found <a target="_blank" rel="noopener noreferrer" href="https://github.com/richzhang/webpage-template">here</a>.<br>
-				A lot of features are taken from <a target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/">bootstrap</a>. All icons are taken from <a target="_blank" rel="noopener noreferrer" href="https://fontawesome.com/">font awesome</a>.
+				A lot of features are taken from <a target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/">bootstrap</a>. All icons are taken from <a target="_blank" rel="noopener noreferrer" href="https://fontawesome.com/">font awesome</a> except for the dice icon taken from <a target="_blank" rel="noopener noreferrer" href="https://icons8.com/">icons8</a>.
 				<br>
 				</a>
 			</p>
