@@ -16,6 +16,8 @@ The *nppc* folder contains the main code, while the *run_\*.py* file contains sc
 
 Training a restoration model can be done using the following code (see the script files for examples):
 
+In *minimal_example.ipynb* is a self contained notebook and can be viewed in Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/EliasNehme/NPPC/blob/main/minimal_example.ipynb)
+
 ```python
 import nppc
 
@@ -78,6 +80,3 @@ trainer.train(
     n_steps=...,        # The amount of update steps to perform during training.
 )
 ```
-
-With the following additional fields:
-
