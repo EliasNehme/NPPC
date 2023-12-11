@@ -605,7 +605,7 @@ class NPPCTrainer(BaseTrainer):
                     fig = JSON.parse(data["figs"]["w_norms_fixed"]);
                     Plotly.newPlot(document.getElementById("w_norms_fixed_fig"), fig.data, fig.layout, {responsive: true});
                     fig = JSON.parse(data["figs"]["w_norms_valid"]);
-                    Plotly.newPlot(document.getElementById("w_norm_valid_fig"), fig.data, fig.layout, {responsive: true});
+                    Plotly.newPlot(document.getElementById("w_norms_valid_fig"), fig.data, fig.layout, {responsive: true});
                     fig = JSON.parse(data["figs"]["lr"]);
                     Plotly.newPlot(document.getElementById("lr_fig"), fig.data, fig.layout, {responsive: true});
 
