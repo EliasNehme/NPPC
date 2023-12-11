@@ -12,11 +12,11 @@ This repository contains examples for training the following datasets and distor
 
 The *nppc* folder contains the main code, while the *run_\*.py* file contains scripts for running the examples. As NPPC requires a trained restoration model, each example has both a *run_\*_restoration.py* file and a *run_\*_nppc.py* file.
 
+The *minimal_example.ipynb* file is a self contained notebook and can be viewed in Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/EliasNehme/NPPC/blob/main/minimal_example.ipynb)
+
 ## Training a restoration model
 
 Training a restoration model can be done using the following code (see the script files for examples):
-
-In *minimal_example.ipynb* is a self contained notebook and can be viewed in Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/EliasNehme/NPPC/blob/main/minimal_example.ipynb)
 
 ```python
 import nppc
