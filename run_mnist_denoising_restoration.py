@@ -3,6 +3,8 @@ import os
 import argparse
 import socket
 
+import torch
+
 import nppc
 
 def main():
@@ -16,6 +18,9 @@ def main():
     print('Running ...')
     print(f'Hostname: {socket.gethostname()}-{device}')
     print(f'Process ID: {os.getgid()}')
+
+    torch.cuda.set_device(device)
+    torch.cuda.empty_cache()
 
     ## Define model
     ## ------------

@@ -8,7 +8,8 @@ This repository contains examples for training the following datasets and distor
 
 - MNIST + Inpainting
 - MNIST + Denosing
-- CelebA HQ (coming soon in the following days)
+- CelebA HQ + Inpainting eyes
+- (more coming)
 
 The *nppc* folder contains the main code, while the *run_\*.py* file contains scripts for running the examples. As NPPC requires a trained restoration model, each example has both a *run_\*_restoration.py* file and a *run_\*_nppc.py* file.
 
