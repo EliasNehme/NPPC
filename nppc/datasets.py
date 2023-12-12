@@ -23,23 +23,6 @@ def find_data_folder(data_folders, folder_name):
         raise Exception('Could not fond the data in any of the provided folders')
     return data_folder
 
-def loop_loader(data_loader, max_steps=None, max_epochs=None):
-    step = 0
-    epoch = 0
-    while True:
-        if isinstance(data_loader.sampler, torch.utils.data.distributed.DistributedSampler):
-            data_loader.sampler.set_epoch(epoch)
-
-        for x in data_loader:
-            if (max_steps is not None) and (step >= max_steps):
-                return None
-            yield x
-            step += 1
-
-        if (max_epochs is not None) and (epoch >= max_epochs):
-            return None
-        epoch += 1
-
 def split_dataset(dataset, split_size, rand=True):
     n_samples = len(dataset)
     if rand:

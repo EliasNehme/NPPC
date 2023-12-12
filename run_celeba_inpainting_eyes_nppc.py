@@ -10,12 +10,12 @@ import torch.multiprocessing as mp
 import nppc
 
 def main(args, rank=0, world_size=None):
+    if rank == 0:
+        print('Running ...')
+        print(f'Hostname: {socket.gethostname()}-{args.device}')
+        print(f'Process ID: {os.getgid()}')
+
     device = args.device.split(',')[rank]
-
-    print('Running ...')
-    print(f'Hostname: {socket.gethostname()}-{device}')
-    print(f'Process ID: {os.getgid()}')
-
     torch.cuda.set_device(device)
     torch.cuda.empty_cache()
 
@@ -39,7 +39,7 @@ def main(args, rank=0, world_size=None):
         max_benchmark_samples=256,
     )
     trainer.train(
-        n_steps=50000,
+        n_steps=20000,
         log_every=20,
         benchmark_every=None,
     )

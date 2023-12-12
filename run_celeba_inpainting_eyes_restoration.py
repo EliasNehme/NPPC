@@ -10,12 +10,12 @@ import torch.multiprocessing as mp
 import nppc
 
 def main(args, rank=0, world_size=None):
+    if rank == 0:
+        print('Running ...')
+        print(f'Hostname: {socket.gethostname()}-{args.device}')
+        print(f'Process ID: {os.getgid()}')
+
     device = args.device.split(',')[rank]
-
-    print('Running ...')
-    print(f'Hostname: {socket.gethostname()}-{device}')
-    print(f'Process ID: {os.getgid()}')
-
     torch.cuda.set_device(device)
     torch.cuda.empty_cache()
 

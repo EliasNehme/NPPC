@@ -8,6 +8,7 @@ from contextlib import contextmanager
 
 from PIL import Image
 import numpy as np
+import tqdm.auto as tqdm
 import torch
 import torch.distributed as distrib
 from torch.nn.parallel import DistributedDataParallel as DDP
@@ -110,6 +111,41 @@ class Timer(object):
             self._end_time = time.time() + self._interval
 
 
+class StatusMassages(object):
+    def __init__(self, fields, initial_msg='--({field})--'):
+        self.fields = fields
+        self.msgs = {field: initial_msg.format(field=field) for field in self.fields}
+        self.handles = {field: tqdm.tqdm([], desc=self.msgs[field], bar_format='{desc}', mininterval=1.) for field in self.fields}
+
+    def set(self, field, msg):
+        self.msgs[field] = msg
+        self.handles[field].set_description_str(msg)
+
+class LoopLoader(object):
+    def __init__(self, dataloader, n_steps=None, n_epochs=None):
+        if n_epochs is not None:
+            if n_steps is None:
+                n_steps = n_epochs * len(dataloader)
+            else:
+                n_steps = min(n_steps, n_epochs * len(dataloader))
+        if n_steps is None:
+            raise Exception('Either "n_steps" or "n_epochs" must be provided.')
+
+        self.dataloader = dataloader
+        self._n = n_steps
+
+    def __len__(self):
+        return self._n
+    
+    def __iter__(self):
+        i = 0
+        while i < len(self):
+            for x in self.dataloader:
+                if i == len(self):
+                    break
+                yield x
+                i += 1
+    
 ## Visualizations
 ## ==============
 def sample_to_width(x, width=1580, padding_size=2):
