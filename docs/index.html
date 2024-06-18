@@ -84,7 +84,7 @@
 						<span style="font-size:24px"><a href='resources/poster.png' target="_blank" rel="noopener noreferrer">[<i class="fas fa-file-image"></i> Poster]</a></span>
 					</div>
 					<div class="col-md-auto">
-						<span style="font-size:24px"><a href="https://github.com/EliasNehme/NPPC" target="_blank" rel="noopener noreferrer">[<i class="fab fa-github"></i> Code (soon)]</a></span>
+						<span style="font-size:24px"><a href="https://github.com/EliasNehme/NPPC" target="_blank" rel="noopener noreferrer">[<i class="fab fa-github"></i> Code]</a></span>
 					</div>
 				</div>
 			</div>
@@ -1014,7 +1014,7 @@
 							<a href='resources/supp.pdf' target="_blank" rel="noopener noreferrer">[<i class="fas fa-file-pdf"></i> Supplementary]</a>
 						</td>
 						<td style="font-size:14pt; text-align: center;">
-							<a target="_blank" rel="noopener noreferrer" href='https://github.com/EliasNehme/NPPC'>[Code (soon)]</a>
+							<a target="_blank" rel="noopener noreferrer" href='https://github.com/EliasNehme/NPPC'>[Code]</a>
 						</td>
 					</tr>
 				</tbody>
@@ -1061,7 +1061,7 @@
 						<a href="https://github.com/EliasNehme/NPPC" target="_blank" rel="noopener noreferrer">
 							<img alt="" id="github_logo" class="round" style="max-width:150px" src="./resources/github_logo.png"/>
 						</a>
-                        <p style="margin-top: 5px;"><a target="_blank" rel="noopener noreferrer" href='https://github.com/EliasNehme/NPPC'>[Code (soon)]</a></p>
+                        <p style="margin-top: 5px;"><a target="_blank" rel="noopener noreferrer" href='https://github.com/EliasNehme/NPPC'>[Code]</a></p>
 					</center>
 				</div>
 				<!-- end github -->
@@ -1098,25 +1098,68 @@
 
 		<!-- related work -->
 		<div class="container-xl">
-			<center><h3>Related work</h3></center>
+			<center><h3>Recent Related Works</h3></center>
 			<p style="font-size: 11pt;">
-				In the last few months, the field of uncertainty quantification have witnessed a number of interesting works, including the particularly related approach by <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/hilamanor/">Hila Manor</a>  and <a href="https://tomer.net.technion.ac.il/" target="_blank" rel="noopener noreferrer">Tomer Michaeli</a>:
+				<!--  
+				Recently the field of uncertainty quantification have witnessed a number of interesting works dealing with pixel correlations in images, such as: 
 				<center>
-				<div class="container-xl">
-					<div class="col-md-auto" style="padding: 1px;">
-						<p style="font-size:14pt; margin-top: 5px;"><strong>On the Posterior Distribution in Denoising:
-							Application to Uncertainty Quantification</strong><br>
-							Hila Manor, Tomer Michaeli. 
-							<a href='https://arxiv.org/abs/2309.13598' target="_blank" rel="noopener noreferrer">[<i class="ai ai-arxiv"></i> ArXiv]</a>
-							<a href='https://hilamanor.github.io/GaussianDenoisingPosterior/' target="_blank" rel="noopener noreferrer">[Project Webpage]</a>
-							<br>
-						</p>
+					<div class="container-xl">
+						<div class="col-md-auto" style="padding: 1px;">
+							<p style="font-size:14pt; margin-top: 5px;">Omer Belhasin, Yaniv Romano, Daniel Freedman, Ehud Rivlin, Michael Elad
+								<strong>Principal Uncertainty Quantification With Spatial Correlation for Image Restoration Problems</strong>
+								<a href='https://ieeexplore.ieee.org/abstract/document/10360418' target="_blank" rel="noopener noreferrer">[<i class="ai ai-arxiv"></i> Paper]</a>
+								<a href='https://github.com/omerb01/puq' target="_blank" rel="noopener noreferrer">[Code]</a>
+								<br>
+							</p>
+						</div>
 					</div>
 				</center>
-				</div>
-				For a more thorough discussion of related work, please see our <a href='resources/paper.pdf' target="_blank" rel="noopener noreferrer">full paper</a>.
+				-->
+				Recently the field of uncertainty quantification have witnessed a number of interesting works dealing with pixel correlations in images, such as:
+				<ul style="padding-left: 6rem; padding-right: 6rem;">
+					<li>
+						Omer Belhasin, Yaniv Romano, Daniel Freedman, Ehud Rivlin, and Michael Elad. 
+						<strong>Principal Uncertainty Quantification with Spatial Correlation for Image Restoration Problems.</strong>
+						IEEE TPAMI, 2023.
+						[<a href="https://ieeexplore.ieee.org/abstract/document/10360418">PDF</a>]
+						[<a href="https://github.com/omerb01/puq">Code</a>]                    
+					</li>
+				</ul>
+				If you find this work interesting, you can also check out the following related/follow-up works from our group:
+				<ul style="padding-left: 6rem; padding-right: 6rem;">
+					<li>
+						Hila Manor, and Tomer Michaeli. 
+						<strong>On the Posterior Distribution in Denoising: Application to Uncertainty Quantification.</strong> 
+						ICLR, 2024.
+						[<a href="https://openreview.net/forum?id=adSGeugiuj">Proceedings</a>]
+						[<a href="https://hilamanor.github.io/GaussianDenoisingPosterior/">Webpage</a>]
+						[<a href="https://github.com/HilaManor/GaussianDenoisingPosterior/">Code</a>]
+					</li>
+					<li>
+						Noa Cohen, Hila Manor, Yuval Bahat, and Tomer Michaeli.
+						<strong>From Posterior Sampling to Meaningful Diversity in Image Restoration.</strong>
+						ICLR, 2024.
+						[<a href="https://openreview.net/forum?id=ff2g30cZxj">Proceedings</a>]
+						[<a href="https://noa-cohen.github.io/MeaningfulDiversityInIR/">Webpage</a>]
+						[<a href="https://github.com/noa-cohen/MeaningfulDiversityInIR">Code</a>]
+					</li>
+					<li>
+						Omer Yair, Elias Nehme and Tomer Michaeli. 
+						<strong>Uncertainty Visualization via Low-Dimensional Posterior Projections.</strong>
+						CVPR, 2024.
+						[<a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Yair_Uncertainty_Visualization_via_Low-Dimensional_Posterior_Projections_CVPR_2024_paper.pdf">Proceedings</a>]
+						[<a href="https://omeryair.com/PPDE/">Webpage</a>]
+						[<a href="https://github.com/yairomer/PPDE">Code</a>]
+					</li>
+					<li>
+						Elias Nehme, Rotem Mulayoff and Tomer Michaeli. 
+						<strong>Hierarchical Uncertainty Exploration via Feedforward Posterior Trees.</strong>
+						arXiv preprint, 2024.
+						[<a href="https://arxiv.org/abs/2405.15719">Arxiv</a>]
+					</li>
+				</ul>
+				For a more thorough discussion of previous/concurrent related work, please see our <a href='resources/paper.pdf' target="_blank" rel="noopener noreferrer">full paper</a>.
 				<br>
-				</a>
 			</p>
 		</div>
 		<hr>
